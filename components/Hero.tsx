@@ -1,5 +1,9 @@
+
+
+"use client";
 import CheckoutButton from "@/components/CheckoutButton";
 import { PRICE_CURRENT, trustBadges } from "@/data/content";
+import AuthButton from "@/components/AuthButton";
 
 export default function Hero() {
   return (
@@ -9,6 +13,9 @@ export default function Hero() {
     >
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8">
         <div className="space-y-6">
+          <div className="flex justify-end">
+            <AuthButton />
+          </div>
           <p className="inline-flex rounded-full bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#2c2929] shadow-sm">
             Mom Hustle Tees
           </p>
