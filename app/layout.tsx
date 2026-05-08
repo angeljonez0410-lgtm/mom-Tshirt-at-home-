@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     title: "Mom Hustle Tees - Start Your T-Shirt Business From Home",
     description:
       "Turn your creativity into cash from home. Complete guide for stay-at-home moms.",
-    images: ["/images/page-previews/preview-1.svg"],
+    images: ["/og-image.jpg"],
     type: "website",
   },
   twitter: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Mom Hustle Tees - Start Your T-Shirt Business From Home",
     description:
       "Turn your creativity into cash from home. Complete guide for stay-at-home moms.",
-    images: ["/images/page-previews/preview-1.svg"],
+    images: ["/og-image.jpg"],
   },
 };
 
