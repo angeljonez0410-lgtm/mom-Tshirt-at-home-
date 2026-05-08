@@ -9,6 +9,35 @@ export const socialLinks = {
   facebook: "https://www.facebook.com/momhustletees",
 };
 
+export const ownerEmail = "angeljonez0410@gmail.com";
+
+export const aiPlatforms = [
+  {
+    name: "Claude",
+    description: "Long-form writing, strategy, and thoughtful planning.",
+    url: "https://claude.ai/new",
+    badge: "Reasoning",
+  },
+  {
+    name: "Gemini",
+    description: "Google-connected research, docs, and brainstorming.",
+    url: "https://gemini.google.com/app",
+    badge: "Research",
+  },
+  {
+    name: "ChatGPT",
+    description: "Fast drafting, coding help, and task automation.",
+    url: "https://chatgpt.com/",
+    badge: "General AI",
+  },
+  {
+    name: "Perplexity",
+    description: "Answer-first search with source-backed web results.",
+    url: "https://www.perplexity.ai/",
+    badge: "Search",
+  },
+];
+
 export const problemPoints = [
   {
     title: "You want financial freedom without leaving your kids",

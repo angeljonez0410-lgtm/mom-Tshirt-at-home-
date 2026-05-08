@@ -1,3 +1,5 @@
+import AIAssistant from "@/components/AIAssistant";
+import AIPlatforms from "@/components/AIPlatforms";
 import FinalCTA from "@/components/FinalCTA";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -21,9 +23,11 @@ export default function Home() {
         <WhatsInside />
         <SneakPeek />
         <Testimonials />
+        <AIPlatforms />
         <Pricing />
         <FAQ />
         <FinalCTA />
+        <AIAssistant />
       </main>
       <Footer />
     </div>
