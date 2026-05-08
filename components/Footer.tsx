@@ -1,4 +1,4 @@
-import { socialLinks } from "@/data/content";
+import { ownerEmail, socialLinks } from "@/data/content";
 
 export default function Footer() {
   return (
@@ -42,7 +42,7 @@ export default function Footer() {
               Facebook
             </a>
           </div>
-          <p className="mt-4 text-sm text-zinc-300">support@momhustletees.com</p>
+          <p className="mt-4 text-sm text-zinc-300">{ownerEmail}</p>
         </div>
       </div>
       <p className="mt-10 text-center text-xs text-zinc-500">

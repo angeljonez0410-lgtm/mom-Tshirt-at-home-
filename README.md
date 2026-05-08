@@ -103,3 +103,70 @@ On successful checkout webhook, buyer gets an automated delivery email with your
 - Mobile responsive check completed
 - Analytics verified
 - Privacy/Terms/Contact pages reviewed
+
+## Vercel Environment Variables Checklist
+
+Add these in Vercel Project Settings -> Environment Variables for `Production`, `Preview`, and `Development` as needed:
+
+- `NEXT_PUBLIC_SITE_URL` = `https://your-domain.com`
+- `STRIPE_SECRET_KEY` = `sk_live_or_test_...`
+- `STRIPE_WEBHOOK_SECRET` = `whsec_...`
+- `RESEND_API_KEY` = `re_...`
+- `NEXT_PUBLIC_GA_ID` = `G-...`
+- `NEXT_PUBLIC_EBOOK_PDF_URL` = `https://your-storage.com/mom-hustle-tees-ebook.pdf`
+- `EBOOK_PDF_URL` = `https://your-storage.com/mom-hustle-tees-ebook.pdf`
+
+Optional (not required by current server code):
+
+- `STRIPE_PUBLIC_KEY` = `pk_live_or_test_...`
+
+## Stripe + Webhook Test Commands
+
+Use these commands locally before going live.
+
+1. Start local app:
+
+```bash
+npm run dev
+```
+
+2. In another terminal, forward Stripe webhooks to local API and capture signing secret:
+
+```bash
+stripe listen --forward-to localhost:3000/api/webhook
+```
+
+Copy the printed `whsec_...` and set `STRIPE_WEBHOOK_SECRET` in `.env.local`.
+
+3. Trigger checkout completed event:
+
+```bash
+stripe trigger checkout.session.completed
+```
+
+4. Verify webhook route handled event and email sent:
+
+- Check app terminal logs for successful webhook handling.
+- Confirm delivery email is sent via Resend dashboard activity.
+
+5. Test checkout endpoint response directly:
+
+```bash
+curl -s -X POST http://localhost:3000/api/checkout \
+	-H "Content-Type: application/json" \
+	-d '{"source":"manual-test"}'
+```
+
+Expected result:
+
+- With Stripe keys configured: JSON with Stripe checkout `url`.
+- Without Stripe keys: JSON with local demo success URL (`/success?demo=1`).
+
+## Production Go-Live Sequence
+
+1. Add production env vars in Vercel.
+2. Deploy.
+3. Set Stripe webhook endpoint to `https://your-domain.com/api/webhook`.
+4. Complete one Stripe test transaction.
+5. Verify redirect to `/success`, email delivery, and PDF download.
+6. Switch Stripe keys to live mode and redeploy.

@@ -16,9 +16,11 @@ function sendEvent(name: string, params: Record<string, unknown>) {
 
 export default function Tracking() {
   const maxDepth = useRef(0);
-  const start = useRef<number>(Date.now());
+  const start = useRef<number>(0);
 
   useEffect(() => {
+    start.current = Date.now();
+
     function onScroll() {
       const scrollTop = window.scrollY;
       const pageHeight = document.body.scrollHeight - window.innerHeight;

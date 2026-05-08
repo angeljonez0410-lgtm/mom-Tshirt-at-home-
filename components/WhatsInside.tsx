@@ -5,7 +5,7 @@ export default function WhatsInside() {
     <section id="inside" className="bg-[#fff7ef] py-16">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-serif text-3xl text-[#1f1c1c] sm:text-4xl">
-          What You'll Learn Inside
+          What You&apos;ll Learn Inside
         </h2>
         <div className="mt-8 grid gap-5 md:grid-cols-2">
           {whatsInsideCards.map((card) => (

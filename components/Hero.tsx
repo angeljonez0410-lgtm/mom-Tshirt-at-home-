@@ -51,7 +51,7 @@ export default function Hero() {
               </p>
               <h3 className="mt-3 text-2xl font-bold">Mom Hustle Tees</h3>
               <p className="mt-2 text-sm text-zinc-200">
-                The Stay-at-Home Mom's Guide to Starting a T-Shirt Business From
+                The Stay-at-Home Mom&apos;s Guide to Starting a T-Shirt Business From
                 Home
               </p>
             </div>
