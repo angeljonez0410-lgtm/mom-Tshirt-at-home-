@@ -9,6 +9,9 @@ export default function AuthButton() {
     return (
       <div className="flex items-center gap-2">
         <span className="text-sm">{session.user?.email}</span>
+        {session.user?.email === "angeljonez0410@gmail.com" && (
+          <Link href="/dashboard" className="bg-green-600 text-white px-3 py-1 rounded">Dashboard</Link>
+        )}
         <button
           className="bg-gray-200 px-3 py-1 rounded"
           onClick={() => signOut({ callbackUrl: "/" })}

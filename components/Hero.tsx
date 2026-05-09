@@ -3,9 +3,12 @@
 "use client";
 import CheckoutButton from "@/components/CheckoutButton";
 import { PRICE_CURRENT, trustBadges } from "@/data/content";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
 import AuthButton from "@/components/AuthButton";
 
 export default function Hero() {
+  const { data: session } = useSession();
   return (
     <section
       id="home"
@@ -38,6 +41,16 @@ export default function Hero() {
             >
               View Offer
             </a>
+            {session?.user?.email === "angeljonez0410@gmail.com" && (
+              <Link
+                href="/downloads/Mom-Hustle-Tees-Ebook.pdf"
+                target="_blank"
+                rel="noopener"
+                className="bg-green-600 text-white px-4 py-2 rounded font-semibold"
+              >
+                Instant Download (Admin)
+              </Link>
+            )}
           </div>
           <div className="flex flex-wrap gap-3 text-sm text-[#342f2f]">
             {trustBadges.map((badge) => (
