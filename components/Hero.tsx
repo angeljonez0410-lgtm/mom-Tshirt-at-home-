@@ -43,7 +43,7 @@ export default function Hero() {
             </a>
             {session?.user?.email === "angeljonez0410@gmail.com" && (
               <Link
-                href="/downloads/Mom-Hustle-Tees-Ebook.pdf"
+                href="/downloads/Mom%20Hustle%20Tees%20Stay-at-Home%20T-Shirt%20Biz%20Ebook.pdf"
                 target="_blank"
                 rel="noopener"
                 className="bg-green-600 text-white px-4 py-2 rounded font-semibold"
