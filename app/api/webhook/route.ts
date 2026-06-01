@@ -2,6 +2,7 @@ import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { sendEbookDeliveryEmail } from "@/lib/email";
 import { getStripeClient } from "@/lib/stripe";
+import { recordPurchase } from "@/lib/purchases";
 
 export const runtime = "nodejs";
 
@@ -35,6 +36,15 @@ export async function POST(req: Request) {
         "http://localhost:3000/success?download=missing";
 
       if (email) {
+        // Record the purchase
+        recordPurchase(
+          email,
+          session.id,
+          3700, // $37.00 in cents
+          "Mom Hustle Tees Ebook"
+        );
+
+        // Send delivery email
         await sendEbookDeliveryEmail({
           to: email,
           customerName: name,
