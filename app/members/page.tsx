@@ -111,7 +111,7 @@ export default function MembersPage() {
             </li>
             <li className="flex items-start">
               <span className="mr-3 text-[#d6ab42] font-bold">✓</span>
-              <span>🎯 Supplier resource list</span>
+              <span>🏪 Supplier resource list</span>
             </li>
             <li className="flex items-start">
               <span className="mr-3 text-[#d6ab42] font-bold">✓</span>

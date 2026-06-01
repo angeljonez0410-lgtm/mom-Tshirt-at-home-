@@ -36,7 +36,7 @@ export async function POST(req: Request) {
         "http://localhost:3000/success?download=missing";
 
       if (email) {
-        // Record the purchase
+        // Record the purchase in memory
         recordPurchase(
           email,
           session.id,
